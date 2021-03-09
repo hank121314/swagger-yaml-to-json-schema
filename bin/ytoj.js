@@ -161,7 +161,11 @@ if (process.argv.length > 2) {
     }
 
     // Make the schema
-    const schema = await lib.makeSchema(lib.swagger(), configuration);
+    const schema = await lib.makeSchema(
+      lib.swagger(),
+      path.join(path.resolve(configuration.yaml), '..'),
+      configuration
+    );
 
     // Write the schema
     fs.writeFileSync(configuration.json, JSON.stringify(schema, null, configuration.indent));

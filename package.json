@@ -6,10 +6,10 @@
   "scripts": {
     "lint": "eslint .",
     "tape": "tape test/tests.js | colortape",
-    "test": "npm run lint && npm run tape",
-    "build": "npm ci && npm run test",
+    "test": "yarn lint && yarn tape",
+    "build": "yarn ci && yarn test",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
+    "prepare": "yarn snyk-protect",
     "start": "node ./bin/ytoj"
   },
   "repository": {
@@ -31,10 +31,12 @@
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^6.2.1",
+    "got": "^11.8.2",
     "js-yaml": "^3.14.1",
     "json-schema-ref-parser": "^6.1.0",
     "lodash": "^4.17.21",
-    "promptly": "^3.2.0"
+    "promptly": "^3.2.0",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "colortape": "^0.1.2",

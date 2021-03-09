@@ -13,7 +13,7 @@ module.exports = {
    * @returns {Promise<Object>} A promise that resolves to the JSON schema object
    * @throws {TypeError} Error on invalid input or options
    */
-  ytoj: async function(input, options = {}) {
+  ytoj: async function (input, options = {}) {
     if (!(typeof input === 'string')) {
       throw new TypeError('Expected the input to be a string.');
     }
@@ -47,6 +47,6 @@ module.exports = {
     // If no id is configured, use the one derived from the spec (license URL)
     configuration.id = configuration.id || lib.default$Id();
 
-    return await lib.makeSchema(swagger, configuration);
+    return await lib.makeSchema(swagger, __dirname, configuration);
   },
 };
